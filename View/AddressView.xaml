@@ -1,0 +1,39 @@
+﻿<Window x:Class="Курсовой_Будякова.View.AddressView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Курсовой_Будякова.View"
+        mc:Ignorable="d"
+        Title="Адреса" Height="312" Width="800" ResizeMode="NoResize" SizeToContent="Height">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="lvAddress" ItemsSource="{Binding AddressTableDpo}" Margin="0,30,0,0" SelectionChanged="lvAddress_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Код" Width="30" 
+                                        DisplayMemberBinding="{Binding _ID}"/>
+                        <GridViewColumn Header="ФИО" Width="200"
+                                        DisplayMemberBinding="{Binding _Person}"/>
+                        <GridViewColumn Header="Город" Width="120" 
+                                        DisplayMemberBinding="{Binding  _CityID}"/>
+                        <GridViewColumn Header="Улица" Width="170"
+                                        DisplayMemberBinding="{Binding  _Street}"/>
+                        <GridViewColumn Header="Строение" Width="70"
+                                        DisplayMemberBinding="{Binding  _Bulding}"/>
+                        <GridViewColumn Header="Офис" Width="60"
+                                        DisplayMemberBinding="{Binding  _Office}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Menu Margin="0,0,0,258">
+            <MenuItem x:Name="InsertCall" Header="Добавить" Command="{Binding AddAddress}" Height="28" />
+            <MenuItem x:Name="UpdateCall" Header="Удалить" Command="{Binding DeleteAddress}"/>
+            <MenuItem x:Name="DeleteCall" Header="Изменить" Command="{Binding EditAddress}" Width="64"/>
+        </Menu>
+    </Grid>
+</Window>

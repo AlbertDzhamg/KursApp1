@@ -1,0 +1,25 @@
+﻿<Window x:Class="Курсовой_Будякова.View.AddressAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Курсовой_Будякова.View"
+        mc:Ignorable="d"
+        Title="Добавление адреса" Height="370" Width="250" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,0">
+        <Button Content="Закрыть" Margin="0,0,22,15" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom" Click="Button_Click_1"/>
+        <Button Content="Сохранить" Margin="0,0,116,15"  HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom" Click="Button_Click"/>
+        <TextBox Height="23" Margin="16,33,0,0" TextWrapping="Wrap" Text="{Binding _Person}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="194"/>
+        <Label Content="ФИО" HorizontalAlignment="Left" Margin="16,6.667,0,0" VerticalAlignment="Top"/>
+        <Label Content="Город" HorizontalAlignment="Left" Margin="16,68.667,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbCity" Margin="16,100,0,0" VerticalAlignment="Top" DisplayMemberPath="_City" HorizontalAlignment="Left" Width="194"/>
+        <TextBox Height="23" Margin="16,153,0,0" TextWrapping="Wrap" Text="{Binding _Street}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="194"/>
+        <Label Content="Улица" HorizontalAlignment="Left" Margin="15,127,0,0" VerticalAlignment="Top"/>
+        <TextBox Height="23" Margin="16,207,0,0" TextWrapping="Wrap" Text="{Binding _Bulding}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="194"/>
+        <Label Content="Строение" HorizontalAlignment="Left" Margin="16,181,0,0" VerticalAlignment="Top"/>
+        <TextBox Height="23" Margin="16,261,0,0" TextWrapping="Wrap" Text="{Binding _Office}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="194"/>
+        <Label Content="Офис" HorizontalAlignment="Left" Margin="16,235,0,0" VerticalAlignment="Top"/>
+
+
+    </Grid>
+</Window>

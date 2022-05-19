@@ -1,0 +1,32 @@
+﻿<Window x:Class="Курсовой_Будякова.View.RegionView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Курсовой_Будякова.View"
+        mc:Ignorable="d"
+        Title="Регионы" Height="281" Width="350" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+    <Grid>
+        <StackPanel Orientation="Horizontal" Background="#FFE4E0E0">
+            <Button x:Name="btnAdd" Command="{Binding AddRegion}" Content="Добавить" Height="25"  Width="73" VerticalAlignment="Top"/>
+            <Button x:Name="btnEdit" Command="{Binding EditRegion}" Content="Редактировать" Height="25"  VerticalAlignment="Top" Width="130" Click="btnEdit_Click"/>
+            <Button x:Name="btnDelete" Command="{Binding DeleteRegion}" Content="Удалить" Height="25"  VerticalAlignment="Top" Width="59" />
+        </StackPanel>
+        <ListView x:Name="lvRegion"  SelectionChanged="lvRegion_SelectionChanged" Margin="0,30,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        
+                            <GridViewColumn Header="Код" Width="50" 
+                                        DisplayMemberBinding="{Binding _ID}"/>
+                        <GridViewColumn Header="Страна" Width="90"
+                                        DisplayMemberBinding="{Binding _CountryID}"/>
+                        <GridViewColumn Header="Регион" Width="130"
+                                        DisplayMemberBinding="{Binding  _Region}"/>
+                        
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
