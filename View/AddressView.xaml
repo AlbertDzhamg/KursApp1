@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Курсовой_Будякова.View"
+        xmlns:local="clr-namespace:Курсовой_Будякова.View" xmlns:viewmodel="clr-namespace:Курсовой_Будякова.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:AddressViewModel}"
         mc:Ignorable="d"
         Title="Адреса" Height="312" Width="800" ResizeMode="NoResize" SizeToContent="Height">
     <Grid>

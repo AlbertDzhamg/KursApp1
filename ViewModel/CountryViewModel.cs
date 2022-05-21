@@ -30,22 +30,23 @@ namespace Курсовой_Будякова.ViewModel
                 OnPropertyChanged("SelectedCountry");
             }
         }
+        
         public event PropertyChangedEventHandler PropertyChanged;
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([System.Runtime.CompilerServices.CallerMemberName]
             string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
-
         }
+
         public ObservableCollection<Model.CountryModel> CountryTable { get; set; } =
+            new ObservableCollection<Model.CountryModel>();   
+        public ObservableCollection<Model.CountryModel> CountryTableDpo { get; set; } =
             new ObservableCollection<Model.CountryModel>();
 
 
         public CountryViewModel()
         {
-            CountryTable= LoadCountry();
 
         }
 
@@ -195,13 +196,21 @@ namespace Курсовой_Будякова.ViewModel
                 return сountryGet ??
                 (сountryGet = new Helper.RelayCommand(obj =>
                 {
-                    LoadCountry();
-
+                    LoadTable(LoadCountry());
                 },
                 (obj) => true));
             }
         }
 
+        private void LoadTable(ObservableCollection<Model.CountryModel> countries)
+        {
+            CountryTable.Clear();
+
+            foreach (Model.CountryModel country in countries)
+            {
+                CountryTable.Add(country);
+            }
+        }
 
 
         public ObservableCollection<Model.CountryModel> LoadCountry()

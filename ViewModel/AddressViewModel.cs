@@ -33,22 +33,25 @@ namespace Курсовой_Будякова.ViewModel
             }
         }
         public event PropertyChangedEventHandler PropertyChanged;
+
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([System.Runtime.CompilerServices.CallerMemberName]
             string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         public ObservableCollection<Model.AddressModel> AddressTable { get; set; } 
         public ObservableCollection<Model.AddressDBO> AddressTableDpo { get; set; } 
         public AddressViewModel()
         {
             AddressTableDpo = new ObservableCollection<Model.AddressDBO>();
             AddressTable = LoadAddress();
-            AddressTableDpo = GetListAddressDpo();
         }
         public ObservableCollection<Model.AddressDBO> GetListAddressDpo()
         {
+            AddressTableDpo.Clear();
+
             foreach (var person in AddressTable)
             {
                 Model.AddressDBO p = new Model.AddressDBO();

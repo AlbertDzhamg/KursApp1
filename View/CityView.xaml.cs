@@ -32,5 +32,10 @@ namespace Курсовой_Будякова.View
         {
             vmCity.SelectedCityDpo = (Model.CityDBO)lvCity.SelectedItem;
         }
+
+        private void btnGet_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

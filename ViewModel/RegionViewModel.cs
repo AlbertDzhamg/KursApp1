@@ -51,12 +51,13 @@ namespace Курсовой_Будякова.ViewModel
 
         public RegionViewModel()
         {
-
             RegionTable= LoadRole();
-            RegionTableDpo = GetListPersonDpo();
         }
+
         public ObservableCollection<Model.RegionDBO> GetListPersonDpo()
         {
+            RegionTableDpo.Clear();
+
             foreach (var person in RegionTable)
             {
                 Model.RegionDBO p = new Model.RegionDBO();
@@ -65,6 +66,7 @@ namespace Курсовой_Будякова.ViewModel
             }
             return RegionTableDpo;
         }
+
         public int MaxId()
         {
             int max = 0;

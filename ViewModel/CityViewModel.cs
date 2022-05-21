@@ -12,9 +12,7 @@ using Npgsql;
 namespace Курсовой_Будякова.ViewModel
 {
     public class CityViewModel: INotifyPropertyChanged
-    {             
-
-        private CountryViewModel vmCountry = new CountryViewModel();                  
+    {                             
         private RegionViewModel vmRegion = new RegionViewModel();
         private Model.CityDBO selectedCityDpo;
         /// <summary>
@@ -31,15 +29,16 @@ namespace Курсовой_Будякова.ViewModel
                 
             }
         }
+       
+        
         public event PropertyChangedEventHandler PropertyChanged;
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([System.Runtime.CompilerServices.CallerMemberName]
             string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
-
         }
+
 
         public ObservableCollection<Model.CityModel> CityTable { get; set; } =
             new ObservableCollection<Model.CityModel>();
@@ -49,10 +48,11 @@ namespace Курсовой_Будякова.ViewModel
         public CityViewModel()
         {
             CityTable=Loadcity();
-            CityTableDpo = GetListPersonDpo();
         }
         public ObservableCollection<Model.CityDBO> GetListPersonDpo()
         {
+            CityTableDpo.Clear();
+
             foreach (var city in CityTable)
             {
                 Model.CityDBO p = new Model.CityDBO();
