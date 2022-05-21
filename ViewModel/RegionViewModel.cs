@@ -247,6 +247,22 @@ namespace Курсовой_Будякова.ViewModel
         }
 
 
+        private Helper.RelayCommand getRegion;
+        public Helper.RelayCommand GetRegion
+        {
+            get
+            {
+                return getRegion ??
+                (getRegion = new Helper.RelayCommand(obj =>
+                {
+                    RegionTable = LoadRole();
+                    RegionTableDpo = GetListPersonDpo();
+                },
+                (obj) => true));
+            }
+        }
+
+
         public ObservableCollection<Model.RegionModel> LoadRole()
         {
             try

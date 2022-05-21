@@ -187,6 +187,21 @@ namespace Курсовой_Будякова.ViewModel
         }
 
 
+        public Helper.RelayCommand сountryGet { get; set; }
+        public Helper.RelayCommand CountryGet
+        {
+            get
+            {
+                return сountryGet ??
+                (сountryGet = new Helper.RelayCommand(obj =>
+                {
+                    LoadCountry();
+
+                },
+                (obj) => true));
+            }
+        }
+
 
 
         public ObservableCollection<Model.CountryModel> LoadCountry()

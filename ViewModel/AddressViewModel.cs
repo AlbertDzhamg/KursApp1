@@ -251,6 +251,23 @@ namespace Курсовой_Будякова.ViewModel
         }
 
 
+        private Helper.RelayCommand getAddress;
+
+        public Helper.RelayCommand GetAddress
+        {
+            get
+            {
+                return getAddress ??
+                (getAddress = new Helper.RelayCommand(obj =>
+                {
+                    AddressTable = LoadAddress();
+                    AddressTableDpo = GetListAddressDpo();
+                },
+                (obj) => true));
+            }
+        }
+
+
         public ObservableCollection<Model.AddressModel> LoadAddress()
         {
             try

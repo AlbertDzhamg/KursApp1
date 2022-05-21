@@ -34,6 +34,7 @@
             <MenuItem x:Name="InsertCall" Header="Добавить" Command="{Binding AddAddress}" Height="28" />
             <MenuItem x:Name="UpdateCall" Header="Удалить" Command="{Binding DeleteAddress}"/>
             <MenuItem x:Name="DeleteCall" Header="Изменить" Command="{Binding EditAddress}" Width="64"/>
+            <MenuItem x:Name="getCall" Header="Загрузить" Command="{Binding GetAddress}" Width="64"/>
         </Menu>
     </Grid>
 </Window>

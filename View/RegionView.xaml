@@ -11,6 +11,7 @@
             <Button x:Name="btnAdd" Command="{Binding AddRegion}" Content="Добавить" Height="25"  Width="73" VerticalAlignment="Top"/>
             <Button x:Name="btnEdit" Command="{Binding EditRegion}" Content="Редактировать" Height="25"  VerticalAlignment="Top" Width="130" Click="btnEdit_Click"/>
             <Button x:Name="btnDelete" Command="{Binding DeleteRegion}" Content="Удалить" Height="25"  VerticalAlignment="Top" Width="59" />
+            <Button x:Name="btnGet" Command="{Binding GetRegion}" Content="Загрузить" Height="25"  VerticalAlignment="Top" Width="59" />
         </StackPanel>
         <ListView x:Name="lvRegion"  SelectionChanged="lvRegion_SelectionChanged" Margin="0,30,0,0">
             <ListView.View>

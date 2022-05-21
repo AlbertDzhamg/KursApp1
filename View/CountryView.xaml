@@ -12,6 +12,7 @@
             <Button x:Name="btnAdd" Command="{Binding AddCountry}" Content="Добавить" Height="25" Width="65" VerticalAlignment="Top" />
             <Button x:Name="btnEdit" Command="{Binding  EditCountry}" Content="Редактировать" Height="25"  VerticalAlignment="Top" Width="103" />
             <Button x:Name="btnDelete" Command="{Binding  DeleteCountry}" Content="Удалить" Height="25"  VerticalAlignment="Top" Width="61" />
+            <Button x:Name="btnGet" Command="{Binding  CountryGet }" Content="Загрузить" Height="25"  VerticalAlignment="Top" Width="61" />
         </StackPanel>
         <ListView x:Name="lvCountry"  ItemsSource="{Binding CountryTable }" SelectionChanged="lvCountry_SelectionChanged">
             <ListView.View>

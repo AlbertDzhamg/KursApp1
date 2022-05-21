@@ -237,6 +237,23 @@ namespace Курсовой_Будякова.ViewModel
         }
 
 
+        private Helper.RelayCommand getCity;
+
+        public Helper.RelayCommand GetCity
+        {
+            get
+            {
+                return getCity ??
+                (getCity = new Helper.RelayCommand(obj =>
+                {
+                    CityTable = Loadcity();
+                    CityTableDpo = GetListPersonDpo();
+                },
+                (obj) => true));
+            }
+        }
+
+
         public ObservableCollection<Model.CityModel> Loadcity()
         {
             try

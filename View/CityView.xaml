@@ -10,7 +10,8 @@
         <StackPanel Orientation="Horizontal" Background="#FFE4E0E0">
             <Button x:Name="btnAdd" Command="{Binding AddCity}"  Content="Добавить" Height="25" Width="74" VerticalAlignment="Top" />
             <Button x:Name="btnEdit" Command="{Binding EditCity}" Content="Редактировать" Height="25"  VerticalAlignment="Top" Width="106"/>
-                <Button x:Name="btnDelete" Command="{Binding DeleteCity}" Content="Удалить" Height="25" VerticalAlignment="Top" Width="67"/>
+            <Button x:Name="btnDelete" Command="{Binding DeleteCity}" Content="Удалить" Height="25" VerticalAlignment="Top" Width="67"/>
+            <Button x:Name="btnGet" Command="{Binding GetCity}" Content="Загрузить" Height="25" VerticalAlignment="Top" Width="67"/>
         </StackPanel>
         <ListView x:Name="lvCity" ItemsSource="{Binding CityTableDpo}"  Margin="0,30,0,0" SelectionChanged="lvCity_SelectionChanged">
             <ListView.View>
