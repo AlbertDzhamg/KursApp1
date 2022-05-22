@@ -57,7 +57,7 @@ namespace Курсовой_Будякова.Model
             RegionDBO RegionDPO = new RegionDBO();
             ViewModel.CountryViewModel vmRegion = new ViewModel.CountryViewModel();
             string country = string.Empty;
-            foreach (var r in vmRegion.CountryTable)
+            foreach (var r in vmRegion.LoadCountry())
             {
                 if (r._ID == regionModel._CountryID)
                 {

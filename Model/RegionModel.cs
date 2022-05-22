@@ -63,7 +63,7 @@ namespace Курсовой_Будякова.Model
         {
             ViewModel.CountryViewModel vmCountry = new ViewModel.CountryViewModel();
             int CountryId = 0;
-            foreach (var r in vmCountry.CountryTable)
+            foreach (var r in vmCountry.LoadCountry())
             {
                 if (r._CountryShort == Reg._CountryID)
                 {

@@ -104,7 +104,7 @@ namespace Курсовой_Будякова.ViewModel
 
                         _ID = maxIdRegion
                     };
-                    wnRegion.cbCountry.ItemsSource = new CountryViewModel().CountryTable;
+                    wnRegion.cbCountry.ItemsSource = new CountryViewModel().LoadCountry();
                     wnRegion.DataContext = reg;
                     if (wnRegion.ShowDialog() == true)
                     {
@@ -158,11 +158,11 @@ namespace Курсовой_Будякова.ViewModel
                     tempPerson = regionDpo.ShallowCopy();
                     
                     wnRegion.DataContext = tempPerson;
-
-                    wnRegion.cbCountry.ItemsSource = vmCountry.CountryTable;
+                    ObservableCollection<Model.CountryModel> countryList = vmCountry.LoadCountry();
+                    wnRegion.cbCountry.ItemsSource = countryList;
                     Helper.FindRegion finder = new Helper.FindRegion(tempPerson._ID);
                     Model.RegionModel region = RegionTable.ToList().Find(new Predicate<Model.RegionModel>(finder.RegionPredicate));
-                    Model.CountryModel regionRole = vmCountry.CountryTable.ToList()
+                    Model.CountryModel regionRole = countryList.ToList()
                         .Find(new Predicate<Model.CountryModel>(role => role._ID == region._CountryID));
                     wnRegion.cbCountry.SelectedItem = regionRole;
 
