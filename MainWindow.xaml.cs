@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using System.IO;
 using Newtonsoft.Json;
 
-namespace Курсовой_Будякова
+namespace Kurs
 {
     /// <summary>
     /// Логика взаимодействия для Window1.xaml
@@ -85,26 +85,26 @@ namespace Курсовой_Будякова
             }
 
         }
-        private void Countrys_Click(object sender, RoutedEventArgs e)
+        private void Aggr_Click(object sender, RoutedEventArgs e)
         {
-           View.CountryView country = new View.CountryView();
+           View.AggrView country = new View.AggrView();
             country.Show();
         }
 
-        private void Citys_Click(object sender, RoutedEventArgs e)
+        private void Account_Click(object sender, RoutedEventArgs e)
         {
-            View.CityView Citys = new View.CityView();
+            View.AccountView Citys = new View.AccountView();
             Citys.Show();
         }
 
-        private void Regions_Click(object sender, RoutedEventArgs e)
+        private void Type_Click(object sender, RoutedEventArgs e)
         {
-            View.RegionView country = new View.RegionView();
+            View.TypeView country = new View.TypeView();
             country.Show();
         }
-        private void Address_Click(object sender, RoutedEventArgs e)
+        private void Bank_Click(object sender, RoutedEventArgs e)
         {
-            View.AddressView country = new View.AddressView();
+            View.BankView country = new View.BankView();
             country.Show();
         }
     }

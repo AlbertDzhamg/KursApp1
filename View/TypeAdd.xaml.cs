@@ -11,14 +11,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Курсовой_Будякова.View
+namespace Kurs.View
 {
     /// <summary>
-    /// Логика взаимодействия для AddressAdd.xaml
+    /// Логика взаимодействия для TypeAdd.xaml
     /// </summary>
-    public partial class AddressAdd : Window
+    public partial class TypeAdd : Window
     {
-        public AddressAdd()
+        public TypeAdd()
         {
             InitializeComponent();
         }

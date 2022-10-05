@@ -3,57 +3,57 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Курсовой_Будякова.Helper
+namespace Kurs.Helper
 {
-    class FindCountry
+    class FindAggr
     {
         int id;
-        public FindCountry(int id)
+        public FindAggr(int id)
         {
             this.id = id;
         }
-        public bool CountryPredicate(Model.CountryModel country)
+        public bool AggrPredicate(Model.AggrModel aggr)
         {
-            return country._ID == id;
+            return aggr._Id == id;
         }
 
     }
-    class FindAddress
+    class FindBank
     {
         int id;
-        public FindAddress(int id)
+        public FindBank(int id)
         {
             this.id = id;
         }
-        public bool AdderssPredicate(Model.AddressModel country)
+        public bool AdderssPredicate(Model.BankModel bank)
         {
-            return country._ID == id;
+            return bank._Id == id;
         }
 
     }
-    class FindRegion
+    class FindType
     {
         int id;
-        public FindRegion(int id)
+        public FindType(int id)
         {
             this.id = id;
         }
-        public bool RegionPredicate(Model.RegionModel region)
+        public bool RegionPredicate(Model.TypeModel type)
         {
-            return region._ID == id;
+            return type._Id == id;
         }
 
     }
-    class FindCity
+    class FindAccount
     {
         int id;
-        public FindCity(int id)
+        public FindAccount(int id)
         {
             this.id = id;
         }
-        public bool CityPredicate(Model.CityModel city)
+        public bool AccountPredicate(Model.AccountModel acc)
         {
-            return city._ID == id;
+            return acc._Id == id;
         }
 
     }

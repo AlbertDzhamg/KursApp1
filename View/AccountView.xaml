@@ -1,0 +1,37 @@
+﻿<Window x:Class="Kurs.View.AccountView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kurs.View" 
+        xmlns:viewmodel="clr-namespace:Kurs.ViewModel"
+        d:DataContext="{d:DesignInstance Type=viewmodel:AccountViewModel}"
+        mc:Ignorable="d"
+        Title="Счета" Height="336" Width="701">
+    <Grid>
+        <StackPanel Orientation="Horizontal" Background="#FFE4E0E0" Grid.ColumnSpan="4">
+            <Button x:Name="btnAdd" Command="{Binding AddAccount}" Content="Добавить" Height="25" Width="65" VerticalAlignment="Top" Margin="5,0,0,0" />
+            <Button x:Name="btnEdit" Command="{Binding  EditAccount}" Content="Редактировать" Height="25"  VerticalAlignment="Top" Width="103" />
+            <Button x:Name="btnDelete" Command="{Binding  DeleteAccount}" Content="Удалить" Height="25"  VerticalAlignment="Top" Width="61" />
+            <Button x:Name="btnGet" Command="{Binding  AccountGet }" Content="Загрузить" Height="25"  VerticalAlignment="Top" Width="61" />
+        </StackPanel>
+        <ListView x:Name="lvAccount" ItemsSource="{Binding AccountTable}"  Margin="0,30,0,0" Grid.ColumnSpan="4" d:ItemsSource="{d:SampleData ItemCount=6}" SelectionChanged="lvAccount_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Код" Width="30" 
+                                        DisplayMemberBinding="{Binding _Id}"/>
+                        <GridViewColumn Header="Код банка" Width="150"
+                                        DisplayMemberBinding="{Binding _BankID}"/>
+                        <GridViewColumn Header="Код договора" Width="150" 
+                                        DisplayMemberBinding="{Binding  _AggrementID}"/>
+                        <GridViewColumn Header="Код типа счета" Width="150" 
+                                        DisplayMemberBinding="{Binding  _TypeID}"/>
+                        <GridViewColumn Header="Счет" Width="200" 
+                                        DisplayMemberBinding="{Binding  _Account}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

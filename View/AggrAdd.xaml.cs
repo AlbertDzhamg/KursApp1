@@ -11,14 +11,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Курсовой_Будякова.View
+namespace Kurs.View
 {
     /// <summary>
-    /// Логика взаимодействия для CityAdd.xaml
+    /// Логика взаимодействия для AggrAdd.xaml
     /// </summary>
-    public partial class CityAdd : Window
+    public partial class AggrAdd : Window
     {
-        public CityAdd()
+        public AggrAdd()
         {
             InitializeComponent();
         }
@@ -26,6 +26,7 @@ namespace Курсовой_Будякова.View
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

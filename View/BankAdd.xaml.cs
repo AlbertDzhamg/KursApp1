@@ -11,14 +11,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Курсовой_Будякова.View
+namespace Kurs.View
 {
     /// <summary>
-    /// Логика взаимодействия для RegionAdd.xaml
+    /// Логика взаимодействия для BankAdd.xaml
     /// </summary>
-    public partial class RegionAdd : Window
+    public partial class BankAdd : Window
     {
-        public RegionAdd()
+        public BankAdd()
         {
             InitializeComponent();
         }

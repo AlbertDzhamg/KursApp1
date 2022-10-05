@@ -1,0 +1,45 @@
+﻿<Window x:Class="Kurs.View.BankView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kurs.View" 
+        xmlns:viewmodel="clr-namespace:Kurs.ViewModel" 
+        mc:Ignorable="d"
+        Title="Банки" Height="312" Width="800" ResizeMode="NoResize" SizeToContent="Height">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="lvBank" ItemsSource="{Binding BankTable}" Margin="0,38,0,0" SelectionChanged="lvBank_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Код" Width="30" 
+                                        DisplayMemberBinding="{Binding _Id}"/>
+                        <GridViewColumn Header="Полное наименование" Width="200"
+                                        DisplayMemberBinding="{Binding _Namefull}"/>
+                        <GridViewColumn Header="Краткое наименование" Width="120" 
+                                        DisplayMemberBinding="{Binding  _Nameshort}"/>
+                        <GridViewColumn Header="ИНН" Width="170"
+                                        DisplayMemberBinding="{Binding  _Inn}"/>
+                        <GridViewColumn Header="БИК" Width="70"
+                                        DisplayMemberBinding="{Binding  _Bik}"/>
+                        <GridViewColumn Header="Кор. счет" Width="60"
+                                        DisplayMemberBinding="{Binding  _Coraccount}"/>
+                        <GridViewColumn Header="Счет" Width="60"
+                                        DisplayMemberBinding="{Binding  _Account}"/>
+                        <GridViewColumn Header="Город" Width="60"
+                                        DisplayMemberBinding="{Binding  _City}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Menu Margin="0,0,0,258">
+            <MenuItem x:Name="InsertCall" Header="Добавить" Command="{Binding AddBank}" Height="28" />
+            <MenuItem x:Name="UpdateCall" Header="Удалить" Command="{Binding DeleteBank}"/>
+            <MenuItem x:Name="DeleteCall" Header="Изменить" Command="{Binding EditBank}" Width="64"/>
+            <MenuItem x:Name="getCall" Header="Загрузить" Command="{Binding BankGet}" Width="64"/>
+        </Menu>
+    </Grid>
+</Window>

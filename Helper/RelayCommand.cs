@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 
 
-namespace Курсовой_Будякова.Helper
+namespace Kurs.Helper
 {
     public class RelayCommand : ICommand
     {
